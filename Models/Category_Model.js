@@ -6,6 +6,6 @@ const categorySchema = {
     image:String,
 }
 
-const mongoCollection = mongoose.model("courses", categorySchema)
+const mongoCollection = mongoose.model("categories", categorySchema)
 
 module.exports = mongoCollection;
