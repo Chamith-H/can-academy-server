@@ -12,6 +12,8 @@ app.use(express.json());
 mongoose.connect(clusterURL)  
 
 app.use("/", require("./Routes/Categories_Route"));
+app.use("/", require("./Routes/Subcategories_Route"));
+app.use("/", require("./Routes/Courses_Route"));
 
 //Testing Back-End
 app.listen(8000, '192.168.8.182', function() {
