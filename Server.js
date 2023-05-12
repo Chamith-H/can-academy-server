@@ -11,6 +11,7 @@ app.use(express.json());
 //Connect Database
 mongoose.connect(clusterURL)  
 
+//Calling Endpoints
 app.use("/", require("./Routes/Categories_Route"));
 app.use("/", require("./Routes/Subcategories_Route"));
 app.use("/", require("./Routes/Courses_Route"));

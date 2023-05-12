@@ -3,7 +3,7 @@ const router = express.Router();
 const Subcategory = require("../Models/Subcategory_Model")
 
 
-// Save a new category --------------------------------------------------------------->
+// Save a new sub category --------------------------------------------------------------->
 router.route("/addSubCategory").post( async(req, res) => {
 
     try {
@@ -36,10 +36,12 @@ router.route("/addSubCategory").post( async(req, res) => {
 })
 
 
-//Get all categories --------------------------------------------------------------->
-router.route("/getSubCategories").post( async(req, res) => { 
+//Get all sub categories --------------------------------------------------------------->
+router.route("/getSubCategories").get( async(req, res) => { 
+
+    console.log("worliki")
     try {
-        const subcategories = await Subcategory.find({asigned:req.body.wanted})
+        const subcategories = await Subcategory.find({})
 
         if(subcategories != null) {
             res.send(subcategories)

@@ -3,7 +3,7 @@ const router = express.Router();
 const Course = require("../Models/Course_Model")
 
 
-// Save a new category --------------------------------------------------------------->
+// Save a new course --------------------------------------------------------------->
 router.route("/addCourse").post( async(req, res) => {
 
     try {
@@ -36,10 +36,10 @@ router.route("/addCourse").post( async(req, res) => {
 })
 
 
-//Get all categories --------------------------------------------------------------->
-router.route("/getCourses").post( async(req, res) => { 
+//Get all courses --------------------------------------------------------------->
+router.route("/getCourses").get( async(req, res) => { 
     try {
-        const courses = await Course.find({asigned:req.body.wanted})
+        const courses = await Course.find({})
 
         if(courses != null) {
             res.send(courses)
